@@ -1,5 +1,5 @@
 
-import { Truck, FileText, Scissors, Users } from 'lucide-react';
+import { Truck, FileText, Scissors, Users, Leaf, Tree, PlaneTakeoff, Briefcase } from 'lucide-react';
 import SectionTitle from '../ui/SectionTitle';
 import ServiceCard from '../ui/ServiceCard';
 
@@ -28,6 +28,30 @@ const Services = () => {
       icon: <Users size={36} />,
       title: "Landscaping Consultation",
       description: "Expert guidance for incorporating bonsai and ornamental plants into landscaping and urban greening projects."
+    },
+    {
+      id: 5,
+      icon: <Leaf size={36} />,
+      title: "Plant Maintenance",
+      description: "Professional care services to ensure your bonsai and ornamental plants remain healthy and vibrant year-round."
+    },
+    {
+      id: 6,
+      icon: <Tree size={36} />,
+      title: "Bonsai Training",
+      description: "Learn the art of bonsai from our master craftsmen through personalized training sessions and workshops."
+    },
+    {
+      id: 7,
+      icon: <PlaneTakeoff size={36} />,
+      title: "International Exhibitions",
+      description: "Showcase your bonsai at prestigious international exhibitions and competitions with our facilitation services."
+    },
+    {
+      id: 8,
+      icon: <Briefcase size={36} />,
+      title: "Corporate Green Solutions",
+      description: "Custom greenery solutions for corporate environments, from office plants to large-scale installations."
     }
   ];
 
@@ -35,12 +59,12 @@ const Services = () => {
     <section id="services" className="section-padding bg-white relative">
       <div className="container-custom mx-auto relative z-10">
         <SectionTitle 
-          subtitle="WHAT WE OFFER" 
-          title="Our Premium Services" 
+          subtitle="OUR EXPERTISE" 
+          title="Professional Services" 
         />
         
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
-          {services.map((service, index) => (
+          {services.slice(0, 8).map((service, index) => (
             <div key={service.id} className={`opacity-0 animate-fade-in`} style={{ animationDelay: `${0.2 * index}s` }}>
               <ServiceCard
                 icon={service.icon}
@@ -57,8 +81,8 @@ const Services = () => {
             <div className="lg:col-span-3 p-8 lg:p-12">
               <h3 className="text-2xl md:text-3xl font-playfair font-bold text-white mb-4">Ready to Start Your Bonsai Journey?</h3>
               <p className="text-white/80 mb-6">
-                Whether you're looking for a specific bonsai specimen or need help with a landscaping project, 
-                our team of experts is ready to assist you at every step.
+                Whether you're looking for expert bonsai services or need help with a landscaping project, 
+                our team of professionals is ready to assist you at every step.
               </p>
               <div className="flex flex-wrap gap-4">
                 <button className="bg-white text-bonsai-dark-green hover:bg-white/90 rounded-md px-6 py-3 font-medium transition-all duration-300 ease-in-out transform hover:translate-y-[-2px] hover:shadow-md">
