@@ -1,5 +1,5 @@
 
-import { Truck, FileText, Scissors, Users, Leaf, Tree, PlaneTakeoff, Briefcase } from 'lucide-react';
+import { Truck, FileText, Scissors, Users, Leaf, Trees, PlaneTakeoff, Briefcase } from 'lucide-react';
 import SectionTitle from '../ui/SectionTitle';
 import ServiceCard from '../ui/ServiceCard';
 
@@ -37,7 +37,7 @@ const Services = () => {
     },
     {
       id: 6,
-      icon: <Tree size={36} />,
+      icon: <Trees size={36} />,
       title: "Bonsai Training",
       description: "Learn the art of bonsai from our master craftsmen through personalized training sessions and workshops."
     },
