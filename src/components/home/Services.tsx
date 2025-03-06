@@ -1,5 +1,4 @@
-
-import { Truck, FileText, Scissors, Users, Leaf, Trees, PlaneTakeoff, Briefcase } from 'lucide-react';
+import { TreePine, Warehouse, Flower2, Trophy, Container, Search } from 'lucide-react';
 import SectionTitle from '../ui/SectionTitle';
 import ServiceCard from '../ui/ServiceCard';
 
@@ -7,51 +6,39 @@ const Services = () => {
   const services = [
     {
       id: 1,
-      icon: <Truck size={36} />,
-      title: "Global Export Solutions",
-      description: "We handle all aspects of international shipping, from permits to packaging, ensuring your bonsai arrives safely."
+      icon: <TreePine size={36} />,
+      title: "Semi-Mature Bonsai for Sale",
+      description: "Order semi-mature bonsai (70-80% developed), ideal for export, nurseries, and further cultivation. Our bonsai are carefully trained for years to ensure strong roots, artistic shaping, and high survival rates."
     },
     {
       id: 2,
-      icon: <FileText size={36} />,
-      title: "Export Documentation",
-      description: "Our team manages all CITES certificates and export papers, ensuring legal compliance for international trade."
+      icon: <Warehouse size={36} />,
+      title: "Wholesale Landscaping & Bulk Plants",
+      description: "Buy premium landscaping plants in bulk for urban beautification, resorts, and commercial spaces. Our plants are grown using sustainable methods and are carefully selected for resilience in various climates."
     },
     {
       id: 3,
-      icon: <Scissors size={36} />,
-      title: "Custom Bonsai Design",
-      description: "Commission a unique bonsai masterpiece tailored to your preferences, styled by our master craftsmen."
+      icon: <Flower2 size={36} />,
+      title: "Rare Tropical Plants Supplier",
+      description: "Discover and order rare tropical plants, including exotic variegated species, sourced from Asia's rich biodiversity. Perfect for collectors, nurseries, and specialty plant stores."
     },
     {
       id: 4,
-      icon: <Users size={36} />,
-      title: "Landscaping Consultation",
-      description: "Expert guidance for incorporating bonsai and ornamental plants into landscaping and urban greening projects."
+      icon: <Trophy size={36} />,
+      title: "Competition-Ready Bonsai",
+      description: "Fully matured, exhibition-grade bonsai, crafted with precision for competitions and high-end collections. Each tree is shaped using traditional techniques and nurtured for years to achieve aesthetic perfection."
     },
     {
       id: 5,
-      icon: <Leaf size={36} />,
-      title: "Plant Maintenance",
-      description: "Professional care services to ensure your bonsai and ornamental plants remain healthy and vibrant year-round."
+      icon: <Container size={36} />,
+      title: "Decorative Plant Pots Supplier",
+      description: "Enhance your plant displays with stylish, durable pots designed for bonsai and ornamental plants. We offer a variety of premium materials, including ceramic, clay, and custom designs."
     },
     {
       id: 6,
-      icon: <Trees size={36} />,
-      title: "Bonsai Training",
-      description: "Learn the art of bonsai from our master craftsmen through personalized training sessions and workshops."
-    },
-    {
-      id: 7,
-      icon: <PlaneTakeoff size={36} />,
-      title: "International Exhibitions",
-      description: "Showcase your bonsai at prestigious international exhibitions and competitions with our facilitation services."
-    },
-    {
-      id: 8,
-      icon: <Briefcase size={36} />,
-      title: "Corporate Green Solutions",
-      description: "Custom greenery solutions for corporate environments, from office plants to large-scale installations."
+      icon: <Search size={36} />,
+      title: "Custom Plant Sourcing & Orders",
+      description: "Looking for specific plants? We provide tailored procurement services, connecting buyers with trusted growers and exporters. Whether you need a rare species or a large bulk order, we ensure quality delivery."
     }
   ];
 
@@ -63,8 +50,8 @@ const Services = () => {
           title="Professional Services" 
         />
         
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
-          {services.slice(0, 8).map((service, index) => (
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+          {services.map((service, index) => (
             <div key={service.id} className={`opacity-0 animate-fade-in`} style={{ animationDelay: `${0.2 * index}s` }}>
               <ServiceCard
                 icon={service.icon}
