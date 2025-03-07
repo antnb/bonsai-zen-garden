@@ -1,5 +1,6 @@
 
 import { Leaf, Instagram, Linkedin, Mail, Phone, Globe, MapPin } from 'lucide-react';
+import { Link } from 'react-router-dom';
 
 const Footer = () => {
   return (
@@ -33,11 +34,11 @@ const Footer = () => {
           <div>
             <h4 className="text-lg font-playfair font-bold mb-4 text-bonsai-wheat">Quick Links</h4>
             <ul className="space-y-2">
-              <li><a href="#services" className="text-gray-300 hover:text-white transition-colors">Services</a></li>
-              <li><a href="#about" className="text-gray-300 hover:text-white transition-colors">About Us</a></li>
-              <li><a href="#services" className="text-gray-300 hover:text-white transition-colors">Services</a></li>
-              <li><a href="#contact" className="text-gray-300 hover:text-white transition-colors">Contact</a></li>
-              <li><a href="#" className="text-gray-300 hover:text-white transition-colors">Blog</a></li>
+              <li><Link to="/services" className="text-gray-300 hover:text-white transition-colors">Services</Link></li>
+              <li><Link to="/about" className="text-gray-300 hover:text-white transition-colors">About Us</Link></li>
+              <li><Link to="/services" className="text-gray-300 hover:text-white transition-colors">Services</Link></li>
+              <li><Link to="/contact" className="text-gray-300 hover:text-white transition-colors">Contact</Link></li>
+              <li><Link to="/reviews" className="text-gray-300 hover:text-white transition-colors">Reviews</Link></li>
             </ul>
           </div>
 
@@ -91,6 +92,19 @@ const Footer = () => {
               <div className="bg-white/10 px-3 py-1 rounded text-xs text-gray-300">Sustainable Trade</div>
               <div className="bg-white/10 px-3 py-1 rounded text-xs text-gray-300">Legal Compliance</div>
             </div>
+          </div>
+        </div>
+        
+        {/* Legal Links */}
+        <div className="mt-6 text-center">
+          <div className="flex flex-wrap justify-center gap-4 text-xs text-gray-400">
+            <Link to="/privacy-policy" className="hover:text-white transition-colors">Privacy Policy</Link>
+            <span>|</span>
+            <Link to="/terms-of-service" className="hover:text-white transition-colors">Terms of Service</Link>
+            <span>|</span>
+            <Link to="/cookie-policy" className="hover:text-white transition-colors">Cookie Policy</Link>
+            <span>|</span>
+            <Link to="/accessibility" className="hover:text-white transition-colors">Accessibility</Link>
           </div>
         </div>
       </div>
