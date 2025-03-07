@@ -1,5 +1,4 @@
-
-import { Workflow, Truck, Tree, Handshake } from 'lucide-react';
+import { Workflow, Truck, Trees, Handshake } from 'lucide-react';
 import SectionTitle from '../ui/SectionTitle';
 
 const Process = () => {
@@ -12,7 +11,7 @@ const Process = () => {
     },
     {
       id: 2,
-      icon: <Tree size={32} className="text-white" />,
+      icon: <Trees size={32} className="text-white" />,
       title: "Cultivation & Selection",
       description: "Our experts carefully select and cultivate each plant, ensuring only the healthiest specimens with the best characteristics proceed to the next stage."
     },
