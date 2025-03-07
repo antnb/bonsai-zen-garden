@@ -33,7 +33,7 @@ const Footer = () => {
           <div>
             <h4 className="text-lg font-playfair font-bold mb-4 text-bonsai-wheat">Quick Links</h4>
             <ul className="space-y-2">
-              <li><a href="#products" className="text-gray-300 hover:text-white transition-colors">Products</a></li>
+              <li><a href="#services" className="text-gray-300 hover:text-white transition-colors">Services</a></li>
               <li><a href="#about" className="text-gray-300 hover:text-white transition-colors">About Us</a></li>
               <li><a href="#services" className="text-gray-300 hover:text-white transition-colors">Services</a></li>
               <li><a href="#contact" className="text-gray-300 hover:text-white transition-colors">Contact</a></li>
@@ -41,9 +41,9 @@ const Footer = () => {
             </ul>
           </div>
 
-          {/* Products */}
+          {/* Services */}
           <div>
-            <h4 className="text-lg font-playfair font-bold mb-4 text-bonsai-wheat">Products</h4>
+            <h4 className="text-lg font-playfair font-bold mb-4 text-bonsai-wheat">Services</h4>
             <ul className="space-y-2">
               <li><a href="#" className="text-gray-300 hover:text-white transition-colors">Pre-Bonsai</a></li>
               <li><a href="#" className="text-gray-300 hover:text-white transition-colors">Contest Bonsai</a></li>

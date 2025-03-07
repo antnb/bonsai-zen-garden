@@ -2,10 +2,10 @@
 import { ChevronDown } from 'lucide-react';
 
 const Hero = () => {
-  const scrollToProducts = () => {
-    const productsSection = document.getElementById('products');
-    if (productsSection) {
-      productsSection.scrollIntoView({ behavior: 'smooth' });
+  const scrollToServices = () => {
+    const servicesSection = document.getElementById('services');
+    if (servicesSection) {
+      servicesSection.scrollIntoView({ behavior: 'smooth' });
     }
   };
 
@@ -37,7 +37,7 @@ const Hero = () => {
         
         {/* Buttons */}
         <div className="opacity-0 animate-fade-in-delay-3 flex flex-col sm:flex-row justify-center items-center gap-4 mb-16">
-          <button onClick={scrollToProducts} className="btn-primary min-w-[200px]">
+          <button onClick={scrollToServices} className="btn-primary min-w-[200px]">
             Explore Premium Bonsai
           </button>
           <button className="btn-outline min-w-[200px]">
@@ -73,7 +73,7 @@ const Hero = () => {
       {/* Scroll Down Indicator */}
       <div className="absolute bottom-8 left-0 right-0 flex justify-center animate-bounce">
         <button 
-          onClick={scrollToProducts}
+          onClick={scrollToServices}
           className="flex items-center justify-center w-10 h-10 rounded-full bg-white/80 backdrop-blur-sm shadow-md"
           aria-label="Scroll down"
         >
