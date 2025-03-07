@@ -1,5 +1,5 @@
 
-import { Leaf, Instagram, Linkedin, Mail, Phone, Globe, MapPin } from 'lucide-react';
+import { Leaf, Instagram, Linkedin, Mail, Phone, Globe, MapPin, FileText } from 'lucide-react';
 import { Link } from 'react-router-dom';
 
 const Footer = () => {
@@ -34,7 +34,6 @@ const Footer = () => {
           <div>
             <h4 className="text-lg font-playfair font-bold mb-4 text-bonsai-wheat">Quick Links</h4>
             <ul className="space-y-2">
-              <li><Link to="/services" className="text-gray-300 hover:text-white transition-colors">Services</Link></li>
               <li><Link to="/about" className="text-gray-300 hover:text-white transition-colors">About Us</Link></li>
               <li><Link to="/services" className="text-gray-300 hover:text-white transition-colors">Services</Link></li>
               <li><Link to="/contact" className="text-gray-300 hover:text-white transition-colors">Contact</Link></li>
@@ -42,15 +41,13 @@ const Footer = () => {
             </ul>
           </div>
 
-          {/* Services */}
+          {/* Services Group */}
           <div>
             <h4 className="text-lg font-playfair font-bold mb-4 text-bonsai-wheat">Services</h4>
             <ul className="space-y-2">
-              <li><a href="#" className="text-gray-300 hover:text-white transition-colors">Pre-Bonsai</a></li>
-              <li><a href="#" className="text-gray-300 hover:text-white transition-colors">Contest Bonsai</a></li>
-              <li><a href="#" className="text-gray-300 hover:text-white transition-colors">Rare Plants</a></li>
-              <li><a href="#" className="text-gray-300 hover:text-white transition-colors">Landscaping Kits</a></li>
-              <li><a href="#" className="text-gray-300 hover:text-white transition-colors">Bonsai Tools</a></li>
+              <li><Link to="/services#service1" className="text-gray-300 hover:text-white transition-colors">Service 1</Link></li>
+              <li><Link to="/services#service2" className="text-gray-300 hover:text-white transition-colors">Service 2</Link></li>
+              <li><Link to="/services#service3" className="text-gray-300 hover:text-white transition-colors">Service 3</Link></li>
             </ul>
           </div>
 
@@ -105,6 +102,13 @@ const Footer = () => {
             <Link to="/cookie-policy" className="hover:text-white transition-colors">Cookie Policy</Link>
             <span>|</span>
             <Link to="/accessibility" className="hover:text-white transition-colors">Accessibility</Link>
+            <span>|</span>
+            <button 
+              onClick={() => window.location.href = '/sitemap.xml'} 
+              className="inline hover:text-white transition-colors cursor-pointer"
+            >
+              Sitemap
+            </button>
           </div>
         </div>
       </div>
