@@ -1,10 +1,9 @@
-
 import React, { useState } from 'react';
 import { Link } from 'react-router-dom';
 import Navbar from '../components/layout/Navbar';
 import Footer from '../components/layout/Footer';
 import SectionTitle from '../components/ui/SectionTitle';
-import { ChevronRight, ChevronDown, ChevronUp, Search, Package, Plant, Globe } from 'lucide-react';
+import { ChevronRight, ChevronDown, ChevronUp, Search, Package, Leaf, Globe } from 'lucide-react';
 
 type FAQCategory = 'all' | 'general' | 'shipping' | 'plant-care';
 
@@ -215,7 +214,7 @@ const FAQPage = () => {
                   : 'bg-gray-100 text-gray-700 hover:bg-gray-200'
               }`}
             >
-              <Plant size={16} />
+              <Leaf size={16} />
               <span>Plant Care</span>
             </button>
           </div>
