@@ -12,12 +12,11 @@ const SitemapPage = () => {
       title: "Main Pages",
       links: [
         { name: "Home", path: "/" },
-        { name: "About Us", path: "/about" },
         { name: "Services", path: "/services" },
-        { name: "Why Choose Us", path: "/why-choose-us" },
-        { name: "Our Process", path: "/our-process" },
-        { name: "Reviews", path: "/reviews" },
-        { name: "Service Catalog", path: "/service-catalog" },
+        { name: "About Us", path: "/about" },
+        { name: "Export Process", path: "/export-process" },
+        { name: "Sustainability", path: "/sustainability" },
+        { name: "Blog", path: "/blog" },
         { name: "Contact", path: "/contact" },
       ]
     },
@@ -34,18 +33,15 @@ const SitemapPage = () => {
     {
       title: "Resources",
       links: [
-        { name: "Export Process", path: "/export-process" },
-        { name: "Sustainability", path: "/sustainability" },
         { name: "FAQ", path: "/faq" },
-        { name: "Blog", path: "/blog" },
+        { name: "Testimonials", path: "/testimonials" },
+        { name: "Press", path: "/press" },
       ]
     },
     {
       title: "Company",
       links: [
-        { name: "Testimonials", path: "/testimonials" },
         { name: "Partners", path: "/partners" },
-        { name: "Press", path: "/press" },
       ]
     },
   ];
@@ -72,7 +68,7 @@ const SitemapPage = () => {
             description="A complete overview of all pages available on our website."
           />
           
-          <div className="bg-white p-6 rounded-lg shadow-sm max-w-5xl mx-auto">
+          <div className="bg-white p-8 rounded-lg shadow-sm max-w-5xl mx-auto">
             <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8 mt-8">
               {sitemapSections.map((section, index) => (
                 <div key={index}>
@@ -155,10 +151,10 @@ const SitemapPage = () => {
               <h2 className="font-playfair text-xl font-bold text-bonsai-dark-green mb-4">
                 About Our Site
               </h2>
-              <p className="text-gray-700">
+              <p className="text-gray-700 mb-4">
                 Indo Cipanas Bonsai is a leading exporter of premium bonsai and tropical plants from Indonesia to the global market. Our website provides comprehensive information about our products, services, and export processes. We're committed to making our content accessible to all users and providing a clear navigation structure.
               </p>
-              <p className="text-gray-700 mt-4">
+              <p className="text-gray-700">
                 If you cannot find what you're looking for or have suggestions for improving our site navigation, please <Link to="/contact" className="text-bonsai-olive hover:underline">contact us</Link>.
               </p>
             </div>

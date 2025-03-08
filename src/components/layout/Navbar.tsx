@@ -64,12 +64,11 @@ const Navbar = () => {
         <nav className="hidden md:flex items-center space-x-8">
           <Link to="/" className="nav-link">Home</Link>
           <Link to="/services" className="nav-link">Services</Link>
-          <Link to="/why-choose-us" className="nav-link">Why Choose Us</Link>
-          <Link to="/our-process" className="nav-link">Our Process</Link>
-          <Link to="/reviews" className="nav-link">Reviews</Link>
           <Link to="/about" className="nav-link">About</Link>
+          <Link to="/export-process" className="nav-link">Export Process</Link>
+          <Link to="/sustainability" className="nav-link">Sustainability</Link>
+          <Link to="/blog" className="nav-link">Blog</Link>
           <Link to="/contact" className="nav-link">Contact</Link>
-          <button className="btn-primary">Request Quote</button>
         </nav>
 
         {/* Mobile Menu Button */}
@@ -87,12 +86,12 @@ const Navbar = () => {
         <nav className="flex flex-col items-center py-4 space-y-4">
           <Link to="/" className="nav-link" onClick={closeMenu}>Home</Link>
           <Link to="/services" className="nav-link" onClick={closeMenu}>Services</Link>
-          <Link to="/why-choose-us" className="nav-link" onClick={closeMenu}>Why Choose Us</Link>
-          <Link to="/our-process" className="nav-link" onClick={closeMenu}>Our Process</Link>
-          <Link to="/reviews" className="nav-link" onClick={closeMenu}>Reviews</Link>
           <Link to="/about" className="nav-link" onClick={closeMenu}>About</Link>
+          <Link to="/export-process" className="nav-link" onClick={closeMenu}>Export Process</Link>
+          <Link to="/sustainability" className="nav-link" onClick={closeMenu}>Sustainability</Link>
+          <Link to="/blog" className="nav-link" onClick={closeMenu}>Blog</Link>
           <Link to="/contact" className="nav-link" onClick={closeMenu}>Contact</Link>
-          <button className="btn-primary w-3/4">Request Quote</button>
+          <Link to="/faq" className="nav-link" onClick={closeMenu}>FAQ</Link>
         </nav>
       </div>
 
