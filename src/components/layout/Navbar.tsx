@@ -98,7 +98,7 @@ const Navbar = () => {
 
       {/* Reading Progress Indicator */}
       <div className="w-full h-1 bg-bonsai-wheat/30">
-        <Progress value={scrollProgress} className="h-1 rounded-none bg-bonsai-wheat/30" indicatorClassName="bg-bonsai-dark-green" />
+        <Progress value={scrollProgress} className="h-1 rounded-none bg-bonsai-wheat/30" />
       </div>
     </header>
   );
