@@ -120,6 +120,63 @@
   .nav-link.active {
     @apply after:w-full text-bonsai-brown;
   }
+  
+  /* Enhanced typography for better readability */
+  .prose {
+    @apply max-w-3xl mx-auto text-gray-700 leading-relaxed;
+  }
+  
+  .prose h2 {
+    @apply text-2xl font-bold text-bonsai-dark-green mt-8 mb-4 font-playfair;
+  }
+  
+  .prose h3 {
+    @apply text-xl font-semibold text-bonsai-olive mt-6 mb-3 font-playfair;
+  }
+  
+  .prose p {
+    @apply mb-5 leading-7;
+  }
+  
+  .prose ul {
+    @apply list-disc pl-6 mb-5 space-y-2;
+  }
+  
+  .prose ol {
+    @apply list-decimal pl-6 mb-5 space-y-2;
+  }
+  
+  .prose li {
+    @apply mb-1;
+  }
+  
+  .prose a {
+    @apply text-bonsai-olive hover:underline;
+  }
+  
+  .prose strong {
+    @apply font-semibold text-bonsai-dark-green;
+  }
+  
+  .prose blockquote {
+    @apply border-l-4 border-bonsai-wheat pl-4 italic my-5;
+  }
+  
+  .date-text {
+    @apply text-sm text-gray-500 mb-6 block;
+  }
+  
+  .section-heading {
+    @apply text-2xl md:text-3xl font-bold text-bonsai-dark-green mb-5 font-playfair;
+  }
+  
+  .subsection-heading {
+    @apply text-xl font-semibold text-bonsai-olive mb-3 font-playfair;
+  }
+  
+  .content-section {
+    @apply mb-8;
+  }
 }
 
 .opacity-0 {

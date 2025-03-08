@@ -72,94 +72,96 @@ const SitemapPage = () => {
             description="A complete overview of all pages available on our website."
           />
           
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8 mt-12">
-            {sitemapSections.map((section, index) => (
-              <div key={index}>
-                <h2 className="font-playfair text-xl font-bold text-bonsai-dark-green mb-4 pb-2 border-b border-bonsai-beige">
-                  {section.title}
-                </h2>
-                <ul className="space-y-3">
-                  {section.links.map((link, linkIndex) => (
-                    <li key={linkIndex}>
-                      <Link 
-                        to={link.path} 
-                        className="flex items-center text-gray-700 hover:text-bonsai-olive transition-colors"
-                      >
-                        <ChevronRight size={14} className="text-bonsai-olive mr-2" />
-                        {link.name}
-                      </Link>
-                    </li>
-                  ))}
-                </ul>
-              </div>
-            ))}
-          </div>
-          
-          {/* Additional Links - External */}
-          <div className="mt-16">
-            <h2 className="font-playfair text-xl font-bold text-bonsai-dark-green mb-4 pb-2 border-b border-bonsai-beige">
-              External Resources
-            </h2>
+          <div className="bg-white p-6 rounded-lg shadow-sm max-w-5xl mx-auto">
+            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8 mt-8">
+              {sitemapSections.map((section, index) => (
+                <div key={index}>
+                  <h2 className="font-playfair text-xl font-bold text-bonsai-dark-green mb-4 pb-2 border-b border-bonsai-beige">
+                    {section.title}
+                  </h2>
+                  <ul className="space-y-3">
+                    {section.links.map((link, linkIndex) => (
+                      <li key={linkIndex}>
+                        <Link 
+                          to={link.path} 
+                          className="flex items-center text-gray-700 hover:text-bonsai-olive transition-colors"
+                        >
+                          <ChevronRight size={14} className="text-bonsai-olive mr-2" />
+                          {link.name}
+                        </Link>
+                      </li>
+                    ))}
+                  </ul>
+                </div>
+              ))}
+            </div>
             
-            <div className="grid grid-cols-1 md:grid-cols-3 gap-6 mt-6">
-              <a 
-                href="https://cites.org/" 
-                target="_blank" 
-                rel="noopener noreferrer"
-                className="glass-card p-4 flex items-center text-gray-700 hover:text-bonsai-olive transition-colors"
-              >
-                <span>CITES Official Website</span>
-                <ExternalLink size={14} className="ml-2" />
-              </a>
+            {/* Additional Links - External */}
+            <div className="mt-16">
+              <h2 className="font-playfair text-xl font-bold text-bonsai-dark-green mb-4 pb-2 border-b border-bonsai-beige">
+                External Resources
+              </h2>
               
+              <div className="grid grid-cols-1 md:grid-cols-3 gap-6 mt-6">
+                <a 
+                  href="https://cites.org/" 
+                  target="_blank" 
+                  rel="noopener noreferrer"
+                  className="glass-card p-4 flex items-center text-gray-700 hover:text-bonsai-olive transition-colors"
+                >
+                  <span>CITES Official Website</span>
+                  <ExternalLink size={14} className="ml-2" />
+                </a>
+                
+                <a 
+                  href="https://www.ippc.int/" 
+                  target="_blank" 
+                  rel="noopener noreferrer"
+                  className="glass-card p-4 flex items-center text-gray-700 hover:text-bonsai-olive transition-colors"
+                >
+                  <span>International Plant Protection Convention</span>
+                  <ExternalLink size={14} className="ml-2" />
+                </a>
+                
+                <a 
+                  href="https://www.agriculture.gov.au/biosecurity-trade/import/plants-grains-horticulture" 
+                  target="_blank" 
+                  rel="noopener noreferrer"
+                  className="glass-card p-4 flex items-center text-gray-700 hover:text-bonsai-olive transition-colors"
+                >
+                  <span>Australian Plant Import Guidelines</span>
+                  <ExternalLink size={14} className="ml-2" />
+                </a>
+              </div>
+            </div>
+            
+            {/* XML Sitemap Link */}
+            <div className="mt-16 text-center">
+              <p className="text-gray-600 mb-4">
+                Looking for our XML sitemap for search engines?
+              </p>
               <a 
-                href="https://www.ippc.int/" 
-                target="_blank" 
-                rel="noopener noreferrer"
-                className="glass-card p-4 flex items-center text-gray-700 hover:text-bonsai-olive transition-colors"
+                href="/sitemap.xml" 
+                target="_blank"
+                className="inline-flex items-center px-4 py-2 border border-bonsai-olive text-bonsai-olive rounded hover:bg-bonsai-olive hover:text-white transition-colors"
               >
-                <span>International Plant Protection Convention</span>
-                <ExternalLink size={14} className="ml-2" />
-              </a>
-              
-              <a 
-                href="https://www.agriculture.gov.au/biosecurity-trade/import/plants-grains-horticulture" 
-                target="_blank" 
-                rel="noopener noreferrer"
-                className="glass-card p-4 flex items-center text-gray-700 hover:text-bonsai-olive transition-colors"
-              >
-                <span>Australian Plant Import Guidelines</span>
+                View XML Sitemap
                 <ExternalLink size={14} className="ml-2" />
               </a>
             </div>
-          </div>
-          
-          {/* XML Sitemap Link */}
-          <div className="mt-16 text-center">
-            <p className="text-gray-600 mb-4">
-              Looking for our XML sitemap for search engines?
-            </p>
-            <a 
-              href="/sitemap.xml" 
-              target="_blank"
-              className="inline-flex items-center px-4 py-2 border border-bonsai-olive text-bonsai-olive rounded hover:bg-bonsai-olive hover:text-white transition-colors"
-            >
-              View XML Sitemap
-              <ExternalLink size={14} className="ml-2" />
-            </a>
-          </div>
-          
-          {/* SEO Information */}
-          <div className="mt-16 bg-bonsai-beige/30 p-6 rounded-lg">
-            <h2 className="font-playfair text-xl font-bold text-bonsai-dark-green mb-4">
-              About Our Site
-            </h2>
-            <p className="text-gray-700">
-              Indo Cipanas Bonsai is a leading exporter of premium bonsai and tropical plants from Indonesia to the global market. Our website provides comprehensive information about our products, services, and export processes. We're committed to making our content accessible to all users and providing a clear navigation structure.
-            </p>
-            <p className="text-gray-700 mt-4">
-              If you cannot find what you're looking for or have suggestions for improving our site navigation, please <Link to="/contact" className="text-bonsai-olive hover:underline">contact us</Link>.
-            </p>
+            
+            {/* SEO Information */}
+            <div className="mt-16 bg-bonsai-beige/30 p-6 rounded-lg">
+              <h2 className="font-playfair text-xl font-bold text-bonsai-dark-green mb-4">
+                About Our Site
+              </h2>
+              <p className="text-gray-700">
+                Indo Cipanas Bonsai is a leading exporter of premium bonsai and tropical plants from Indonesia to the global market. Our website provides comprehensive information about our products, services, and export processes. We're committed to making our content accessible to all users and providing a clear navigation structure.
+              </p>
+              <p className="text-gray-700 mt-4">
+                If you cannot find what you're looking for or have suggestions for improving our site navigation, please <Link to="/contact" className="text-bonsai-olive hover:underline">contact us</Link>.
+              </p>
+            </div>
           </div>
         </div>
       </main>
