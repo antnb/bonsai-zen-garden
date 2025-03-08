@@ -2,18 +2,31 @@
 import { useState, useEffect } from 'react';
 import { Menu, X, Leaf } from 'lucide-react';
 import { Link } from 'react-router-dom';
+import { Progress } from "@/components/ui/progress";
 
 const Navbar = () => {
   const [isScrolled, setIsScrolled] = useState(false);
   const [isMenuOpen, setIsMenuOpen] = useState(false);
+  const [scrollProgress, setScrollProgress] = useState(0);
 
-  // Handle scroll event to change navbar appearance
+  // Handle scroll event to change navbar appearance and track reading progress
   useEffect(() => {
     const handleScroll = () => {
+      // Update navbar appearance
       if (window.scrollY > 50) {
         setIsScrolled(true);
       } else {
         setIsScrolled(false);
+      }
+
+      // Calculate scroll progress for the reading indicator
+      const windowHeight = window.innerHeight;
+      const documentHeight = document.documentElement.scrollHeight - windowHeight;
+      const scrolled = window.scrollY;
+      
+      if (documentHeight > 0) {
+        const percentage = (scrolled / documentHeight) * 100;
+        setScrollProgress(percentage);
       }
     };
 
@@ -81,6 +94,11 @@ const Navbar = () => {
           <Link to="/contact" className="nav-link" onClick={closeMenu}>Contact</Link>
           <button className="btn-primary w-3/4">Request Quote</button>
         </nav>
+      </div>
+
+      {/* Reading Progress Indicator */}
+      <div className="w-full h-1 bg-bonsai-wheat/30">
+        <Progress value={scrollProgress} className="h-1 rounded-none bg-bonsai-wheat/30" indicatorClassName="bg-bonsai-dark-green" />
       </div>
     </header>
   );

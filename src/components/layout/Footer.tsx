@@ -30,17 +30,6 @@ const Footer = () => {
             </div>
           </div>
 
-          {/* Quick Links */}
-          <div>
-            <h4 className="text-lg font-playfair font-bold mb-4 text-bonsai-wheat">Quick Links</h4>
-            <ul className="space-y-2">
-              <li><Link to="/about" className="text-gray-300 hover:text-white transition-colors">About Us</Link></li>
-              <li><Link to="/services" className="text-gray-300 hover:text-white transition-colors">Services</Link></li>
-              <li><Link to="/contact" className="text-gray-300 hover:text-white transition-colors">Contact</Link></li>
-              <li><Link to="/reviews" className="text-gray-300 hover:text-white transition-colors">Reviews</Link></li>
-            </ul>
-          </div>
-
           {/* Services Group */}
           <div>
             <h4 className="text-lg font-playfair font-bold mb-4 text-bonsai-wheat">Services</h4>
@@ -48,6 +37,17 @@ const Footer = () => {
               <li><Link to="/services#service1" className="text-gray-300 hover:text-white transition-colors">Service 1</Link></li>
               <li><Link to="/services#service2" className="text-gray-300 hover:text-white transition-colors">Service 2</Link></li>
               <li><Link to="/services#service3" className="text-gray-300 hover:text-white transition-colors">Service 3</Link></li>
+            </ul>
+          </div>
+
+          {/* Legal Links */}
+          <div>
+            <h4 className="text-lg font-playfair font-bold mb-4 text-bonsai-wheat">Legal</h4>
+            <ul className="space-y-2">
+              <li><Link to="/privacy-policy" className="text-gray-300 hover:text-white transition-colors">Privacy Policy</Link></li>
+              <li><Link to="/terms-of-service" className="text-gray-300 hover:text-white transition-colors">Terms of Service</Link></li>
+              <li><Link to="/cookie-policy" className="text-gray-300 hover:text-white transition-colors">Cookie Policy</Link></li>
+              <li><Link to="/accessibility" className="text-gray-300 hover:text-white transition-colors">Accessibility</Link></li>
             </ul>
           </div>
 
@@ -90,6 +90,13 @@ const Footer = () => {
               <div className="bg-white/10 px-3 py-1 rounded text-xs text-gray-300">Legal Compliance</div>
             </div>
           </div>
+        </div>
+        
+        {/* Company Registration Information */}
+        <div className="mt-8 text-center">
+          <p className="text-xs text-gray-400 max-w-3xl mx-auto">
+            Indo Cipanas Bonsai is a legally registered company in Indonesia, officially recognized under the Indonesian business registry with NIB 212240016669. We operate in full compliance with national regulations, ensuring reliable and professional service for our clients worldwide.
+          </p>
         </div>
         
         {/* Legal Links */}
