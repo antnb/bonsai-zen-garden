@@ -4,6 +4,7 @@ import { cn } from "@/lib/utils";
 interface SectionTitleProps {
   subtitle: string;
   title: string;
+  description?: string;
   alignment?: "left" | "center" | "right";
   className?: string;
 }
@@ -11,6 +12,7 @@ interface SectionTitleProps {
 const SectionTitle = ({
   subtitle,
   title,
+  description,
   alignment = "center",
   className,
 }: SectionTitleProps) => {
@@ -41,6 +43,14 @@ const SectionTitle = ({
       <div className={cn("opacity-0 animate-fade-in-delay-2 w-20 h-1 mt-4 mb-4 rounded-full mx-auto", 
         className?.includes("text-white") ? "bg-bonsai-wheat/70" : "bg-bonsai-wheat"
       )}></div>
+      
+      {description && (
+        <p className={cn("opacity-0 animate-fade-in-delay-3 max-w-2xl mx-auto mt-4", 
+          className?.includes("text-white") ? "text-white/90" : "text-gray-600"
+        )}>
+          {description}
+        </p>
+      )}
     </div>
   );
 };
