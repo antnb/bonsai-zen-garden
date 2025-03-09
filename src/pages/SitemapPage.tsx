@@ -13,6 +13,7 @@ const SitemapPage = () => {
       links: [
         { name: "Home", path: "/" },
         { name: "Services", path: "/services" },
+        { name: "Services Catalog", path: "/services-catalog" },
         { name: "About Us", path: "/about" },
         { name: "Export Process", path: "/export-process" },
         { name: "Sustainability", path: "/sustainability" },
@@ -136,14 +137,13 @@ const SitemapPage = () => {
               <p className="text-gray-600 mb-4">
                 Looking for our XML sitemap for search engines?
               </p>
-              <a 
-                href="/sitemap.xml" 
-                target="_blank"
+              <Link 
+                to="/sitemap.xml" 
                 className="inline-flex items-center px-4 py-2 border border-bonsai-olive text-bonsai-olive rounded hover:bg-bonsai-olive hover:text-white transition-colors"
               >
                 View XML Sitemap
                 <ExternalLink size={14} className="ml-2" />
-              </a>
+              </Link>
             </div>
             
             {/* SEO Information */}

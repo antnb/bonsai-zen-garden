@@ -36,6 +36,7 @@ const Footer = () => {
             <ul className="space-y-2">
               <li><Link to="/" className="text-gray-300 hover:text-white transition-colors">Home</Link></li>
               <li><Link to="/services" className="text-gray-300 hover:text-white transition-colors">Services</Link></li>
+              <li><Link to="/services-catalog" className="text-gray-300 hover:text-white transition-colors">Services Catalog</Link></li>
               <li><Link to="/about" className="text-gray-300 hover:text-white transition-colors">About Us</Link></li>
               <li><Link to="/export-process" className="text-gray-300 hover:text-white transition-colors">Export Process</Link></li>
               <li><Link to="/sustainability" className="text-gray-300 hover:text-white transition-colors">Sustainability</Link></li>
@@ -53,6 +54,7 @@ const Footer = () => {
               <li><Link to="/partners" className="text-gray-300 hover:text-white transition-colors">Partners</Link></li>
               <li><Link to="/press" className="text-gray-300 hover:text-white transition-colors">Press</Link></li>
               <li><Link to="/sitemap" className="text-gray-300 hover:text-white transition-colors">Sitemap</Link></li>
+              <li><Link to="/sitemap.xml" className="text-gray-300 hover:text-white transition-colors">XML Sitemap</Link></li>
             </ul>
           </div>
 
@@ -114,6 +116,8 @@ const Footer = () => {
             <Link to="/cookie-policy" className="hover:text-white transition-colors">Cookie Policy</Link>
             <span>|</span>
             <Link to="/accessibility" className="hover:text-white transition-colors">Accessibility</Link>
+            <span>|</span>
+            <Link to="/return-policy" className="hover:text-white transition-colors">Return Policy</Link>
             <span>|</span>
             <Link to="/sitemap" className="hover:text-white transition-colors">Sitemap</Link>
           </div>

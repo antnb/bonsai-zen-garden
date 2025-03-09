@@ -64,6 +64,7 @@ const Navbar = () => {
         <nav className="hidden md:flex items-center space-x-8">
           <Link to="/" className="nav-link">Home</Link>
           <Link to="/services" className="nav-link">Services</Link>
+          <Link to="/services-catalog" className="nav-link">Catalog</Link>
           <Link to="/about" className="nav-link">About</Link>
           <Link to="/export-process" className="nav-link">Export Process</Link>
           <Link to="/sustainability" className="nav-link">Sustainability</Link>
@@ -86,6 +87,7 @@ const Navbar = () => {
         <nav className="flex flex-col items-center py-4 space-y-4">
           <Link to="/" className="nav-link" onClick={closeMenu}>Home</Link>
           <Link to="/services" className="nav-link" onClick={closeMenu}>Services</Link>
+          <Link to="/services-catalog" className="nav-link" onClick={closeMenu}>Catalog</Link>
           <Link to="/about" className="nav-link" onClick={closeMenu}>About</Link>
           <Link to="/export-process" className="nav-link" onClick={closeMenu}>Export Process</Link>
           <Link to="/sustainability" className="nav-link" onClick={closeMenu}>Sustainability</Link>

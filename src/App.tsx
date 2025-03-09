@@ -6,6 +6,7 @@ import { QueryClient, QueryClientProvider } from "@tanstack/react-query";
 import { BrowserRouter, Routes, Route } from "react-router-dom";
 import Index from "./pages/Index";
 import ServicesPage from "./pages/ServicesPage";
+import ServicesCatalogPage from "./pages/ServicesCatalogPage";
 import AboutPage from "./pages/AboutPage";
 import ContactPage from "./pages/ContactPage";
 import PrivacyPolicyPage from "./pages/PrivacyPolicyPage";
@@ -21,6 +22,7 @@ import ReturnPolicyPage from "./pages/ReturnPolicyPage";
 import PartnersPage from "./pages/PartnersPage";
 import PressPage from "./pages/PressPage";
 import SitemapPage from "./pages/SitemapPage";
+import XmlSitemapPage from "./pages/XmlSitemapPage";
 import NotFound from "./pages/NotFound";
 import CookieConsent from "./components/cookie/CookieConsent";
 
@@ -35,6 +37,7 @@ const App = () => (
         <Routes>
           <Route path="/" element={<Index />} />
           <Route path="/services" element={<ServicesPage />} />
+          <Route path="/services-catalog" element={<ServicesCatalogPage />} />
           <Route path="/about" element={<AboutPage />} />
           <Route path="/contact" element={<ContactPage />} />
           <Route path="/privacy-policy" element={<PrivacyPolicyPage />} />
@@ -52,6 +55,7 @@ const App = () => (
           <Route path="/partners" element={<PartnersPage />} />
           <Route path="/press" element={<PressPage />} />
           <Route path="/sitemap" element={<SitemapPage />} />
+          <Route path="/sitemap.xml" element={<XmlSitemapPage />} />
           
           {/* ADD ALL CUSTOM ROUTES ABOVE THE CATCH-ALL "*" ROUTE */}
           <Route path="*" element={<NotFound />} />
