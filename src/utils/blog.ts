@@ -43,7 +43,7 @@ export async function fetchBlogPosts(): Promise<BlogPost[]> {
         const slug = filePath.split('/').pop()?.replace('.md', '') || '';
         
         posts.push({
-          ...frontmatter as BlogPost,
+          ...frontmatter as unknown as BlogPost,
           content,
           slug
         });
@@ -82,7 +82,7 @@ function parseFrontmatter(markdown: string): { frontmatter: Record<string, any>;
   frontmatterString.split('\n').forEach(line => {
     const [key, ...valueParts] = line.split(':');
     if (key && valueParts.length) {
-      let value = valueParts.join(':').trim();
+      let value: string | boolean | number = valueParts.join(':').trim();
       
       // Convert boolean strings to actual booleans
       if (value === 'true') value = true;
