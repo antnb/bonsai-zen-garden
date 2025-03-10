@@ -8,8 +8,15 @@ const XmlSitemapPage = () => {
   const today = new Date().toISOString().split('T')[0];
   
   useEffect(() => {
-    // Fetch and parse the Markdown file
-    fetch('/src/data/sitemap.md')
+    // Fetch and parse the Markdown file - using a relative path that works in both dev and production
+    fetch('./src/data/sitemap.md')
+      .then(response => {
+        if (!response.ok) {
+          // Try alternate path if first attempt fails
+          return fetch('/src/data/sitemap.md');
+        }
+        return response;
+      })
       .then(response => {
         if (!response.ok) {
           throw new Error('Failed to fetch sitemap markdown');
