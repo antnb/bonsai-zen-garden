@@ -18,6 +18,7 @@ import SustainabilityPage from "./pages/SustainabilityPage";
 import FAQPage from "./pages/FAQPage";
 import TestimonialsPage from "./pages/TestimonialsPage";
 import BlogPage from "./pages/BlogPage";
+import BlogPostPage from "./pages/BlogPostPage";
 import ReturnPolicyPage from "./pages/ReturnPolicyPage";
 import PartnersPage from "./pages/PartnersPage";
 import PressPage from "./pages/PressPage";
@@ -51,6 +52,7 @@ const App = () => (
           <Route path="/faq" element={<FAQPage />} />
           <Route path="/testimonials" element={<TestimonialsPage />} />
           <Route path="/blog" element={<BlogPage />} />
+          <Route path="/blog/:slug" element={<BlogPostPage />} />
           <Route path="/return-policy" element={<ReturnPolicyPage />} />
           <Route path="/partners" element={<PartnersPage />} />
           <Route path="/press" element={<PressPage />} />
