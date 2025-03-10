@@ -1,32 +1,43 @@
 
-import React, { useEffect } from 'react';
+import React, { useEffect, useState } from 'react';
 
 // This component generates an XML sitemap for search engines
 const XmlSitemapPage = () => {
+  const [routes, setRoutes] = useState<string[]>([]);
   const baseUrl = window.location.origin;
   const today = new Date().toISOString().split('T')[0];
   
-  // List of all routes in the application
-  const routes = [
-    '/',
-    '/services',
-    '/services-catalog',
-    '/about',
-    '/contact',
-    '/export-process',
-    '/sustainability',
-    '/faq',
-    '/testimonials',
-    '/blog',
-    '/partners',
-    '/press',
-    '/privacy-policy',
-    '/terms-of-service',
-    '/cookie-policy',
-    '/accessibility',
-    '/return-policy',
-    '/sitemap'
-  ];
+  useEffect(() => {
+    // Fetch and parse the Markdown file
+    fetch('/src/data/sitemap.md')
+      .then(response => {
+        if (!response.ok) {
+          throw new Error('Failed to fetch sitemap markdown');
+        }
+        return response.text();
+      })
+      .then(markdown => {
+        // Extract routes from the markdown content
+        // Skip lines that are headers (starting with #), empty lines, or comments
+        const extractedRoutes = markdown
+          .split('\n')
+          .filter(line => line.trim() && !line.startsWith('#') && !line.startsWith('//'))
+          .map(line => line.trim());
+        
+        setRoutes(extractedRoutes);
+      })
+      .catch(error => {
+        console.error('Error loading sitemap paths:', error);
+        // Fallback to a minimal set of routes if the markdown fails to load
+        setRoutes([
+          '/',
+          '/services',
+          '/about',
+          '/contact',
+          '/sitemap'
+        ]);
+      });
+  }, []);
   
   // Generate XML sitemap content
   const generateSitemapXml = () => {
@@ -53,6 +64,8 @@ const XmlSitemapPage = () => {
   };
   
   useEffect(() => {
+    if (routes.length === 0) return;
+    
     const xmlContent = generateSitemapXml();
     
     // Create a blob with the XML content
@@ -85,7 +98,7 @@ const XmlSitemapPage = () => {
     return () => {
       URL.revokeObjectURL(url);
     };
-  }, []);
+  }, [routes]);
   
   return null;
 };
