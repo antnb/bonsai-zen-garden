@@ -84,12 +84,12 @@ function parseFrontmatter(markdown: string): { frontmatter: Record<string, any>;
     if (key && valueParts.length) {
       let value = valueParts.join(':').trim();
       
-      // Convert boolean strings
+      // Convert boolean strings to actual booleans
       if (value === 'true') value = true;
       if (value === 'false') value = false;
       
-      // Convert numeric strings
-      if (!isNaN(Number(value)) && value.trim() !== '') {
+      // Convert numeric strings to numbers
+      if (!isNaN(Number(value)) && value.trim() !== '' && !value.includes(' ')) {
         value = Number(value);
       }
       
