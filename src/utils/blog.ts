@@ -82,15 +82,18 @@ function parseFrontmatter(markdown: string): { frontmatter: Record<string, any>;
   frontmatterString.split('\n').forEach(line => {
     const [key, ...valueParts] = line.split(':');
     if (key && valueParts.length) {
-      let value: string | boolean | number = valueParts.join(':').trim();
+      // First, store the raw string value
+      let rawValue = valueParts.join(':').trim();
+      let value: string | boolean | number = rawValue;
       
       // Convert boolean strings to actual booleans
-      if (value === 'true') value = true;
-      if (value === 'false') value = false;
+      if (rawValue === 'true') value = true;
+      if (rawValue === 'false') value = false;
       
       // Convert numeric strings to numbers
-      if (!isNaN(Number(value)) && value.trim() !== '' && !value.includes(' ')) {
-        value = Number(value);
+      // Only convert if the string contains only digits and doesn't have spaces
+      if (!isNaN(Number(rawValue)) && rawValue !== '' && !rawValue.includes(' ')) {
+        value = Number(rawValue);
       }
       
       frontmatter[key.trim()] = value;
