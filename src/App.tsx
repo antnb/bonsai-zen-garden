@@ -1,32 +1,22 @@
-
 import { Toaster } from "@/components/ui/toaster";
 import { Toaster as Sonner } from "@/components/ui/sonner";
 import { TooltipProvider } from "@/components/ui/tooltip";
 import { QueryClient, QueryClientProvider } from "@tanstack/react-query";
 import { BrowserRouter, Routes, Route } from "react-router-dom";
-import Index from "./pages/Index";
-import ServicesPage from "./pages/ServicesPage";
-import ServicesCatalogPage from "./pages/ServicesCatalogPage";
-import AboutPage from "./pages/AboutPage";
-import ContactPage from "./pages/ContactPage";
-import PrivacyPolicyPage from "./pages/PrivacyPolicyPage";
-import TermsOfServicePage from "./pages/TermsOfServicePage";
-import CookiePolicyPage from "./pages/CookiePolicyPage";
-import AccessibilityPage from "./pages/AccessibilityPage";
-import ExportProcessPage from "./pages/ExportProcessPage";
-import SustainabilityPage from "./pages/SustainabilityPage";
-import FAQPage from "./pages/FAQPage";
-import TestimonialsPage from "./pages/TestimonialsPage";
-import BlogPage from "./pages/BlogPage";
-import BlogPostPage from "./pages/BlogPostPage";
-import ReturnPolicyPage from "./pages/ReturnPolicyPage";
-import PartnersPage from "./pages/PartnersPage";
-import PressPage from "./pages/PressPage";
-import SitemapPage from "./pages/SitemapPage";
-import XmlSitemapPage from "./pages/XmlSitemapPage";
-import NotFound from "./pages/NotFound";
 import CookieConsent from "./components/cookie/CookieConsent";
 
+// Layout components (Hugo's Baseof and Partial Templates)
+import DefaultLayout from "./layouts/DefaultLayout";
+import SingleLayout from "./layouts/SingleLayout";
+import ListLayout from "./layouts/ListLayout";
+
+// Page components (Hugo's Content Templates)
+import HomePage from "./pages/HomePage";
+import ListPage from "./pages/ListPage";
+import SinglePage from "./pages/SinglePage";
+import NotFound from "./pages/NotFound";
+
+// Create query client
 const queryClient = new QueryClient();
 
 const App = () => (
@@ -36,31 +26,38 @@ const App = () => (
       <Sonner />
       <BrowserRouter>
         <Routes>
-          <Route path="/" element={<Index />} />
-          <Route path="/services" element={<ServicesPage />} />
-          <Route path="/services-catalog" element={<ServicesCatalogPage />} />
-          <Route path="/about" element={<AboutPage />} />
-          <Route path="/contact" element={<ContactPage />} />
-          <Route path="/privacy-policy" element={<PrivacyPolicyPage />} />
-          <Route path="/terms-of-service" element={<TermsOfServicePage />} />
-          <Route path="/cookie-policy" element={<CookiePolicyPage />} />
-          <Route path="/accessibility" element={<AccessibilityPage />} />
+          {/* Home Page (Hugo-like index.html) */}
+          <Route path="/" element={<DefaultLayout><HomePage /></DefaultLayout>} />
           
-          {/* Main pages */}
-          <Route path="/export-process" element={<ExportProcessPage />} />
-          <Route path="/sustainability" element={<SustainabilityPage />} />
-          <Route path="/faq" element={<FAQPage />} />
-          <Route path="/testimonials" element={<TestimonialsPage />} />
-          <Route path="/blog" element={<BlogPage />} />
-          <Route path="/blog/:slug" element={<BlogPostPage />} />
-          <Route path="/return-policy" element={<ReturnPolicyPage />} />
-          <Route path="/partners" element={<PartnersPage />} />
-          <Route path="/press" element={<PressPage />} />
-          <Route path="/sitemap" element={<SitemapPage />} />
-          <Route path="/sitemap.xml" element={<XmlSitemapPage />} />
+          {/* Content Section List Pages (Hugo-like list.html templates) */}
+          <Route path="/services" element={<ListLayout section="services"><ListPage section="services" /></ListLayout>} />
+          <Route path="/about" element={<SingleLayout section="about"><SinglePage slug="about" /></SingleLayout>} />
+          <Route path="/export-process" element={<SingleLayout section="export-process"><SinglePage slug="export-process" /></SingleLayout>} />
+          <Route path="/sustainability" element={<SingleLayout section="sustainability"><SinglePage slug="sustainability" /></SingleLayout>} />
+          <Route path="/faq" element={<SingleLayout section="faq"><SinglePage slug="faq" /></SingleLayout>} />
+          <Route path="/testimonials" element={<SingleLayout section="testimonials"><SinglePage slug="testimonials" /></SingleLayout>} />
           
-          {/* ADD ALL CUSTOM ROUTES ABOVE THE CATCH-ALL "*" ROUTE */}
-          <Route path="*" element={<NotFound />} />
+          {/* Blog Section (Hugo-like list and single templates) */}
+          <Route path="/blog" element={<ListLayout section="blog"><ListPage section="blog" /></ListLayout>} />
+          <Route path="/blog/:slug" element={<SingleLayout section="blog"><SinglePage /></SingleLayout>} />
+          
+          {/* Other Sections */}
+          <Route path="/partners" element={<SingleLayout section="partners"><SinglePage slug="partners" /></SingleLayout>} />
+          <Route path="/press" element={<SingleLayout section="press"><SinglePage slug="press" /></SingleLayout>} />
+          
+          {/* Legal Pages */}
+          <Route path="/privacy-policy" element={<SingleLayout section="legal"><SinglePage slug="privacy-policy" /></SingleLayout>} />
+          <Route path="/terms-of-service" element={<SingleLayout section="legal"><SinglePage slug="terms-of-service" /></SingleLayout>} />
+          <Route path="/cookie-policy" element={<SingleLayout section="legal"><SinglePage slug="cookie-policy" /></SingleLayout>} />
+          <Route path="/accessibility" element={<SingleLayout section="legal"><SinglePage slug="accessibility" /></SingleLayout>} />
+          <Route path="/return-policy" element={<SingleLayout section="legal"><SinglePage slug="return-policy" /></SingleLayout>} />
+          
+          {/* Sitemap */}
+          <Route path="/sitemap" element={<SingleLayout section="sitemap"><SinglePage slug="sitemap" /></SingleLayout>} />
+          <Route path="/sitemap.xml" element={<SingleLayout section="sitemap"><SinglePage slug="sitemap-xml" /></SingleLayout>} />
+          
+          {/* Catch-all 404 (Hugo 404.html) */}
+          <Route path="*" element={<DefaultLayout><NotFound /></DefaultLayout>} />
         </Routes>
         <CookieConsent />
       </BrowserRouter>

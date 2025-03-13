@@ -11,16 +11,16 @@ const Hero = () => {
 
   return (
     <div id="home" className="relative min-h-screen flex items-center justify-center overflow-hidden">
-      {/* Background Image Layer */}
+      {/* Background Image Layer - Hugo would use partial templates for this */}
       <div className="absolute inset-0 w-full h-full bg-cover bg-center bg-no-repeat z-0"
-           style={{ backgroundImage: "url('https://images.unsplash.com/photo-1511406471420-feeac25296bc?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2000&q=80')" }}>
+           style={{ backgroundImage: "url('https://images.unsplash.com/photo-1598751337485-0525fd7cbbe9?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=2070&q=80')" }}>
         <div className="absolute inset-0 bg-bonsai-dark-green/40 backdrop-filter backdrop-blur-[2px]"></div>
       </div>
       
-      {/* Overlay Pattern */}
+      {/* Overlay Pattern - This would be a partial in Hugo */}
       <div className="absolute inset-0 opacity-10 bg-[url('https://images.unsplash.com/photo-1585202900225-6d3ac20a6962?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1000&q=80')] bg-repeat"></div>
       
-      {/* Content */}
+      {/* Content - In Hugo this would be a content block */}
       <div className="container-custom relative z-10 mx-auto text-center px-4 pt-20">
         {/* Subtitle */}
         <div className="opacity-0 animate-fade-in">
