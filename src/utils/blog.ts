@@ -82,8 +82,10 @@ function parseFrontmatter(markdown: string): { frontmatter: Record<string, any>;
   frontmatterString.split('\n').forEach(line => {
     const [key, ...valueParts] = line.split(':');
     if (key && valueParts.length) {
-      // First, store the raw string value
-      let rawValue = valueParts.join(':').trim();
+      // Store the raw string value
+      const rawValue = valueParts.join(':').trim();
+      
+      // Set default value as the raw string
       let value: string | boolean | number = rawValue;
       
       // Convert boolean strings to actual booleans
