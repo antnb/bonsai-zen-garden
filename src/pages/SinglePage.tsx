@@ -4,6 +4,8 @@ import { useParams, useNavigate } from 'react-router-dom';
 import { fetchBlogPosts, type BlogPost } from '../utils/blog';
 import SectionTitle from '../components/ui/SectionTitle';
 import { CalendarDays, User, Clock } from 'lucide-react';
+import { formatMarkdown } from '../utils/markdownUtils';
+import MarkdownContent from '../components/blog/MarkdownContent';
 
 // This mimics Hugo's single.html template functionality
 interface SinglePageProps {
@@ -63,10 +65,7 @@ const SinglePage: React.FC<SinglePageProps> = ({ slug: propSlug, section: propSe
         return (
           <div className="max-w-4xl mx-auto mt-8">
             {post.content && (
-              <div 
-                className="prose prose-lg prose-green max-w-none"
-                dangerouslySetInnerHTML={{ __html: formatMarkdown(post.content) }} 
-              />
+              <MarkdownContent content={post.content} />
             )}
           </div>
         );
@@ -131,36 +130,6 @@ const SinglePage: React.FC<SinglePageProps> = ({ slug: propSlug, section: propSe
       </div>
     </div>
   );
-};
-
-// Simple markdown formatter (similar to the one in BlogPostPage)
-const formatMarkdown = (markdown: string) => {
-  let html = markdown;
-  
-  // Format headers
-  html = html.replace(/^# (.*$)/gm, '<h1 class="text-3xl font-bold mt-8 mb-4">$1</h1>');
-  html = html.replace(/^## (.*$)/gm, '<h2 class="text-2xl font-bold mt-7 mb-3">$1</h2>');
-  html = html.replace(/^### (.*$)/gm, '<h3 class="text-xl font-bold mt-6 mb-3">$1</h3>');
-  
-  // Format lists
-  html = html.replace(/^\d+\. (.*$)/gm, '<li class="ml-6 list-decimal mb-2">$1</li>');
-  html = html.replace(/^- (.*$)/gm, '<li class="ml-6 list-disc mb-2">$1</li>');
-  
-  // Format paragraphs
-  html = html.replace(/^(?!(#|<h|<li))(.*$)/gm, (match) => {
-    if (match.trim() === '') return '<br>';
-    return `<p class="mb-4">${match}</p>`;
-  });
-  
-  // Format emphasis
-  html = html.replace(/\*\*(.*?)\*\*/g, '<strong>$1</strong>');
-  html = html.replace(/\*(.*?)\*/g, '<em>$1</em>');
-  
-  // Wrap lists
-  html = html.replace(/<li class="ml-6 list-disc mb-2">([\s\S]*?)(?=<(?!li)|$)/g, '<ul class="mb-6">$&</ul>');
-  html = html.replace(/<li class="ml-6 list-decimal mb-2">([\s\S]*?)(?=<(?!li)|$)/g, '<ol class="mb-6">$&</ol>');
-  
-  return html;
 };
 
 export default SinglePage;
